@@ -1,0 +1,26 @@
+CRITICAL - 2024-12-19 06:15:08 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "data_center.php"
+[Method: GET, Route: data_center]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('data_center.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('data_center', [], true)
+ 3 APPPATH\Controllers\Auth.php(129): view('data_center')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->data_center()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Magang-1\\public\\index.php')
+CRITICAL - 2024-12-19 06:15:11 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "data_center.php"
+[Method: GET, Route: data_center]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('data_center.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('data_center', [], true)
+ 3 APPPATH\Controllers\Auth.php(129): view('data_center')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->data_center()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Magang-1\\public\\index.php')

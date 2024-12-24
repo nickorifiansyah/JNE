@@ -1,0 +1,16 @@
+CRITICAL - 2024-12-10 08:52:36 --> ErrorException: Cannot redeclare App\Controllers\Auth::absence_app()
+[Method: GET, Route: attendance-overtime]
+in APPPATH\Controllers\Auth.php on line 106.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-12-10 08:52:38 --> ErrorException: Cannot redeclare App\Controllers\Auth::absence_app()
+[Method: GET, Route: LAIP]
+in APPPATH\Controllers\Auth.php on line 106.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-12-10 08:52:41 --> ErrorException: Cannot redeclare App\Controllers\Auth::absence_app()
+[Method: GET, Route: attendance-overtime]
+in APPPATH\Controllers\Auth.php on line 106.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-12-10 08:52:44 --> ErrorException: Cannot redeclare App\Controllers\Auth::absence_app()
+[Method: GET, Route: leave-absence]
+in APPPATH\Controllers\Auth.php on line 106.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()

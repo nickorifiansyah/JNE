@@ -1,0 +1,270 @@
+/* Body Styling */
+body {
+  margin: 0; /* Menghapus margin default browser */
+  font-family: Arial, sans-serif; /* Mengatur font utama halaman */
+  background-color: #f0f0f0; /* Warna latar belakang halaman */
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex; /* Menggunakan Flexbox untuk layout elemen navbar */
+  justify-content: space-between; /* Elemen navbar dipisahkan ke kiri dan kanan */
+  align-items: center; /* Menengahkan elemen secara vertikal */
+  background: linear-gradient(
+    to right,
+    #6a7f9b,
+    #242b35
+  ); /* Gradien warna navbar */
+  padding: 10px 30px; /* Padding atas/bawah dan kiri/kanan */
+  color: white; /* Warna teks navbar */
+  height: 70px; /* Tinggi navbar */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Efek bayangan untuk memberikan kedalaman */
+}
+
+/* Styling untuk tautan pengguna */
+.user-link {
+  text-decoration: none; /* Menghapus garis bawah pada tautan */
+  color: inherit; /* Warna teks mengikuti warna elemen induk */
+  display: flex; /* Flexbox untuk mengatur ikon dan teks */
+  align-items: center; /* Menengahkan ikon dan teks secara vertikal */
+  gap: 5px; /* Jarak antara ikon dan teks */
+}
+
+.user-link:hover {
+  color: #1e3278; /* Ubah warna teks saat hover */
+}
+
+/* Kontainer di dalam navbar */
+.navbar-left,
+.navbar-center,
+.navbar-right {
+  display: flex; /* Menggunakan Flexbox */
+  align-items: center; /* Menengahkan elemen secara vertikal */
+}
+
+/* Navbar Left */
+.navbar-left i {
+  font-size: 20px; /* Ukuran ikon */
+  margin-right: 10px; /* Jarak ikon menu dengan elemen berikutnya */
+}
+#menu-icon {
+  font-size: 28px; /* Ukuran ikon */
+  color: #fff; /* Warna ikon */
+  cursor: pointer; /* Menampilkan pointer saat hover */
+  transition: transform 0.3s ease, color 0.3s ease; /* Animasi saat hover */
+}
+
+#menu-icon:hover {
+  color: #4db8ff; /* Warna saat hover */
+  transform: rotate(90deg); /* Efek rotasi saat hover */
+}
+
+/* Logo Styling */
+.navbar .logo img {
+  height: 70px; /* Tinggi logo */
+  margin-right: 10px; /* Jarak antara logo dan elemen berikutnya */
+  transition: transform 0.3s ease; /* Animasi saat hover */
+}
+
+.navbar .logo img:hover {
+  transform: scale(1.1); /* Efek zoom saat hover */
+}
+
+/* Navbar Tengah */
+.navbar-center {
+  display: flex; /* Flexbox untuk mengatur elemen */
+  align-items: center; /* Menengahkan elemen secara vertikal */
+  justify-content: flex-end; /* Elemen ke kanan */
+  flex-grow: 1; /* Mengisi ruang yang tersedia */
+  border-left: 1px solid rgba(255, 255, 255, 0.8); /* Garis pemisah kiri */
+  padding-left: 20px; /* Padding di sebelah kiri */
+  text-align: center; /* Teks rata tengah */
+  margin-right: auto; /* Mengatur margin kanan otomatis */
+}
+
+.navbar-center i {
+  font-size: 30px; /* Ukuran ikon */
+  margin-left: 10px; /* Jarak antara ikon */
+}
+
+/* Kontainer Waktu di Navbar */
+#time-container {
+  display: flex; /* Flexbox untuk elemen waktu */
+  flex-direction: column; /* Mengatur elemen secara vertikal */
+  align-items: flex-start; /* Elemen rata kiri */
+  justify-content: center; /* Pusatkan secara vertikal */
+  color: white; /* Warna teks */
+  margin-left: 20px; /* Jarak ke kiri */
+}
+
+#time {
+  font-size: 20px; /* Ukuran teks waktu */
+  font-weight: bold; /* Teks tebal */
+  margin-bottom: 2px; /* Jarak antara waktu dan tanggal */
+}
+
+#date {
+  font-size: 14px; /* Ukuran teks tanggal */
+  opacity: 0.8; /* Transparansi teks */
+}
+
+/* Navbar Kanan */
+.navbar-right {
+  display: flex; /* Flexbox untuk elemen kanan */
+  align-items: center; /* Menengahkan secara vertikal */
+  justify-content: center; /* Menengahkan secara horizontal */
+  font-size: 14px; /* Ukuran teks */
+  font-weight: bold; /* Teks tebal */
+  padding: 10px 20px; /* Padding di dalam elemen */
+  min-width: 300px; /* Lebar minimal */
+  height: 60px; /* Tinggi elemen */
+  border-radius: 5px; /* Membulatkan sudut elemen */
+}
+
+.navbar-right i {
+  font-size: 25px; /* Ukuran ikon */
+  margin-right: 8px; /* Jarak antara ikon dan teks */
+}
+
+/* Container Styling */
+.container {
+  max-width: 1200px; /* Lebar maksimal container */
+  margin: 50px auto; /* Margin atas dan bawah 50px, kiri dan kanan auto (tengah) */
+  padding: 10px 50px; /* Padding kiri dan kanan */
+  background-color: white; /* Warna latar belakang container */
+  border-radius: 30px; /* Membulatkan sudut container */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* Bayangan untuk efek kedalaman */
+  width: 30%; /* Lebar container mengikuti konten */
+}
+
+/* Main Content */
+.main-content {
+  text-align: center; /* Teks rata tengah */
+  padding: 100px 50px; /* Padding atas dan bawah */
+  background-color: #e1e1e2; /* Warna latar belakang utama */
+}
+
+/* Header pada bagian ESS */
+.ess-header h1 {
+  font-size: 2.5rem; /* Ukuran teks besar */
+  color: #1e3278; /* Warna teks */
+  font-weight: bold; /* Teks tebal */
+}
+
+.ess-header p {
+  font-size: 1.2rem; /* Ukuran teks deskripsi */
+  color: #1e3278; /* Warna teks */
+  margin-top: 10px; /* Jarak atas */
+  font-weight: bold; /* Teks tebal */
+}
+
+/* Menu ESS */
+.ess-menu-wrapper {
+  display: flex; /* Menggunakan Flexbox */
+  justify-content: center; /* Menengahkan kontainer `.ess-menu` secara horizontal */
+  width: 100%; /* Lebar penuh agar Flexbox bekerja dengan benar */
+}
+
+.ess-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px; /* Kurangi gap agar elemen lebih dekat */
+  margin-top: 40px;
+  width: 80%; /* Batasi lebar untuk menengahkan */
+  max-width: 1372px; /* Batas maksimum lebar */
+}
+
+/* Item Menu */
+.menu-item {
+  display: flex; /* Flexbox untuk memisahkan ikon dan teks */
+  background: linear-gradient(
+    to left,
+    rgba(97, 204, 240, 0.53) 67%,
+    #eaf3ff 50%
+  ); /* Gradasi background */
+  border-radius: 12px; /* Membulatkan sudut */
+  width: 300px; /* Lebar item menu */
+  height: 100px; /* Tinggi item menu */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Bayangan elemen */
+  text-decoration: none; /* Menghilangkan garis bawah pada link */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transisi animasi */
+  overflow: hidden; /* Menghindari overflow konten */
+}
+
+.menu-item:hover {
+  transform: translateY(-5px); /* Efek geser ke atas saat hover */
+  box-shadow: 0 50px 20px rgba(0, 0, 0, 0.2); /* Bayangan lebih besar saat hover */
+}
+
+.menu-item img {
+  width: 60px; /* Lebar ikon */
+  height: 60px; /* Tinggi ikon */
+  margin-left: 20px; /* Margin kiri ikon */
+  margin-right: 20px; /* Margin kanan ikon */
+  align-self: center; /* Menengahkan ikon secara vertikal */
+}
+
+.menu-item span {
+  flex: 1; /* Mengisi ruang yang tersedia */
+  display: flex; /* Flexbox untuk teks */
+  align-items: center; /* Menengahkan teks secara vertikal */
+  justify-content: center; /* Menengahkan teks secara horizontal */
+  font-size: 1.3rem; /* Ukuran teks */
+  font-weight: bold; /* Teks tebal */
+  color: #1e3278; /* Warna teks */
+}
+
+/* Footer */
+.custom-footer {
+  width: 100%; /* Lebar penuh */
+  height: 70px; /* Tinggi footer */
+  background: linear-gradient(
+    to right,
+    #556080,
+    #2f3e4d
+  ); /* Gradien warna footer */
+  color: white; /* Warna teks */
+  display: flex; /* Flexbox */
+  justify-content: center; /* Teks rata tengah */
+  align-items: center; /* Teks rata tengah secara vertikal */
+  text-align: center; /* Teks rata tengah horizontal */
+  padding: 15px 0; /* Padding atas dan bawah */
+}
+
+/* Media Query untuk Perangkat Tablet */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Navbar vertikal pada layar kecil */
+    height: auto; /* Tinggi dinamis */
+  }
+
+  .menu-item {
+    width: 180px; /* Lebar item menu lebih kecil */
+  }
+}
+
+/* Media Query untuk Perangkat Kecil (Smartphone) */
+@media (max-width: 480px) {
+  .ess-menu {
+    grid-template-columns: repeat(2, 1fr); /* Menu dalam dua kolom */
+    gap: 15px; /* Jarak antar item menu */
+  }
+}
+/* Responsif untuk layar kecil (tablet & ponsel) */
+@media (max-width: 1024px) {
+  .manager-column {
+      flex: 1 1 calc(33.33% - 15px); /* 3 kolom per baris */
+  }
+}
+
+@media (max-width: 768px) {
+  .manager-column {
+      flex: 1 1 calc(50% - 15px); /* 2 kolom per baris */
+  }
+}
+
+@media (max-width: 480px) {
+  .manager-column {
+      flex: 1 1 100%; /* 1 kolom per baris */
+  }
+}

@@ -1,0 +1,565 @@
+/* Body Styling */
+body {
+  margin: 0; /* Menghapus margin default browser */
+  font-family: Arial, sans-serif; /* Font utama halaman */
+  background-color: #f0f0f0; /* Warna latar belakang halaman */
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex; /* Flexbox untuk layout elemen */
+  justify-content: space-between; /* Memisahkan elemen ke kiri dan kanan */
+  align-items: center; /* Rata tengah secara vertikal */
+  background: linear-gradient(
+    to right,
+    #6a7f9b,
+    #242b35
+  ); /* Gradien warna navbar */
+  padding: 10px 30px; /* Spasi dalam navbar */
+  color: white; /* Warna teks */
+  height: 70px; /* Tinggi navbar */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Bayangan bawah untuk depth */
+}
+
+.user-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Jarak antara ikon dan teks */
+}
+
+.user-link:hover {
+  color: #1e3278; /* Ubah warna saat hover */
+}
+
+/* Navbar Inner Containers */
+.navbar-left,
+.navbar-center,
+.navbar-right {
+  display: flex; /* Flexbox untuk layout elemen */
+  align-items: center; /* Rata tengah secara vertikal */
+}
+
+/* Navbar Left */
+.navbar-left i {
+  font-size: 20px; /* Ukuran ikon */
+  margin-right: 10px; /* Jarak ikon menu dengan elemen berikutnya */
+}
+#menu-icon {
+  font-size: 28px;  /* Ukuran font tetap */
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.8s ease, color 0.8s ease, border 0.8s ease, background 0.8s ease; /* Transisi untuk rotasi, warna, border, dan background */
+  position: relative;
+  padding: 5px 15px; /* Padding untuk ruang di sekitar ikon */
+  border-radius: 10px; /* Membuat border lebih halus */
+}
+
+/* Mengubah warna saat hover */
+#menu-icon:hover {
+  color: #ffffff; /* Warna saat hover */
+  background-color: rgba(255, 255, 255, 0.1); /* Efek latar belakang saat hover */
+}
+
+/* Ketika menjadi X, tambahkan border dan latar belakang */
+#menu-icon.fa-times {
+  transform: rotate(180deg); /* Rotasi 180 derajat (jadi X) */
+  border: 3px solid #ffff; /* Border sekitar ikon */
+  background-color: rgba(77, 184, 255, 0.1); /* Warna latar belakang saat menjadi X */
+  transition: transform 1s ease, background-color 1s ease; /* Transisi untuk rotasi dan border */
+}
+
+
+
+
+/* Navigasi Menu */
+.daftar {
+  display: flex; /* Sembunyikan menu secara default */
+  position: absolute;
+  top: 0; /* Mulai dari atas */
+  left: 0;
+  width: 100%; /* Lebar penuh */
+  background: linear-gradient(to right, #6a7f9b, #242b35); /* Gradien warna seperti sebelumnya */
+  padding: 50px 0px;
+  padding-left: 70px;
+  margin-top: 90px;
+  z-index: 1000;
+  /* Pastikan padding tidak melebihi lebar browser */
+  box-sizing: border-box;
+  /* Animasi awal */
+  opacity: 0;
+  transform: translateY(-20px); /* Mulai sedikit ke atas */
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  pointer-events: none; /* Mencegah interaksi saat menu tidak aktif */
+}
+
+/* Tambahkan class 'active' untuk menu saat terbuka */
+.daftar.active{
+  opacity: 1;
+  transform: translateY(0); 
+  pointer-events: auto; /* Aktifkan interaksi */
+}
+
+.daftar ul {
+  display: flex; /* Gunakan flexbox untuk dua kolom */
+  flex-wrap: wrap; /* Izinkan item berpindah ke aris berikutnya */
+  gap: 50px 70px; /* Jarak antara item secara vertikal dan horizontal */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.daftar li {
+  flex: 0 0 calc(50% - 100px); /* 50% lebar untuk 2 kolom, dikurangi gap */
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer; /* Ubah ke pointer agar interaktif */
+  position: relative;
+  padding: 6px 0; /* Tambahkan ruang untuk efek underline */
+  transition: all 0.3s ease; /* Transisi halus untuk perubahan */
+}
+
+.daftar li:hover {
+  color: #72c4fb; /* Warna teks saat hover */
+  transform: scale(1.05); /* Efek sedikit membesar */
+  text-shadow: 0 0 8px rgba(77, 184, 255, 0); /* Glow di sekitar teks */
+}
+
+/* Efek underline animasi */
+.daftar li::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, #72c4fb, #1f8eff); /* Gradien warna untuk underline */
+  transform: scaleX(0); /* Garis awalnya tidak terlihat */
+  transform-origin: bottom right;
+  transition: transform 0.8s ease; /* Transisi animasi underline */
+}
+
+.daftar li:hover::after {
+  transform: scaleX(1); /* Tampilkan garis underline saat hover */
+  transform-origin: bottom left;
+}
+
+
+/* Logo Styling */
+.navbar .logo img {
+  height: 70px; /* Tinggi logo */
+  margin-right: 10px; /* Jarak antara logo dan elemen berikutnya */
+  transition: transform 0.3s ease; /* Animasi saat hover */
+}
+
+.navbar .logo img:hover {
+  transform: scale(1.1); /* Efek zoom saat hover */
+}
+
+/* Navbar Center */
+.navbar-center {
+  display: flex; /* Flexbox untuk layout */
+  align-items: center; /* Vertikal rata tengah */
+  justify-content: flex-end; /* Elemen mengalir ke kanan */
+  flex-grow: 1; /* Memperluas elemen untuk berada di tengah */
+  border-left: 1px solid rgba(255, 255, 255, 0.8); /* Garis pemisah dengan elemen sebelumnya */
+  padding-left: 20px; /* Spasi antara garis dan elemen */
+  text-align: center; /* Rata tengah teks */
+  margin-right: auto; /* Mengutamakan posisi tengah */
+}
+
+.navbar-center i {
+  font-size: 30px; /* Ukuran ikon lonceng */
+  margin-left: 10px; /* Jarak ikon dengan teks waktu */
+}
+
+/* Time Container */
+#time-container {
+  display: flex; /* Flexbox untuk pengaturan waktu dan tanggal */
+  flex-direction: column; /* Elemen waktu dan tanggal disusun vertikal */
+  align-items: flex-start; /* Waktu dan tanggal rata kiri */
+  justify-content: center; /* Vertikal rata tengah */
+  color: white; /* Warna teks */
+  margin-left: 20px; /* Jarak dari elemen sebelumnya */
+}
+
+#time {
+  font-size: 20px; /* Ukuran teks waktu */
+  font-weight: bold; /* Menonjolkan waktu */
+  margin-bottom: 2px; /* Spasi kecil antara waktu dan tanggal */
+}
+
+#date {
+  font-size: 14px; /* Ukuran teks tanggal */
+  opacity: 0.8; /* Teks lebih redup untuk tanggal */
+}
+
+/* Navbar Right */
+.navbar-right {
+  display: flex; /* Flexbox untuk layout */
+  align-items: center; /* Vertikal rata tengah */
+  justify-content: center; /* Rata tengah horizontal */
+  font-size: 14px; /* Ukuran teks */
+  font-weight: bold; /* Teks tebal */
+  padding: 10px 20px; /* Spasi dalam elemen */
+  min-width: 300px; /* Lebar minimum elemen */
+  height: 60px; /* Tinggi elemen */
+  border-radius: 5px; /* Sudut elemen membulat */
+}
+
+.navbar-right i {
+  font-size: 25px; /* Ukuran ikon user */
+  margin-right: 8px; /* Jarak ikon dengan nama */
+}
+
+
+
+/* Personal Container Default */
+.personal-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  max-width: 1372px;
+  margin: 50px auto;
+  margin-top: 150px;
+  transition: margin-left 0.3s ease, width 0.3s ease; /* Animasi transisi */
+}
+
+
+
+
+/* Profile Container */
+.profile {
+  display: flex; /* Membuat elemen fleksibel */
+  align-items: center; /* Menyelaraskan vertikal */
+  justify-content: center; /* Menyelaraskan horizontal (default: center) */
+  margin: 15px;
+}
+
+/* Aturan untuk menempatkan gambar */
+.profile-left {
+  justify-content: center; /* Gambar ke kiri */
+}
+
+.profile-right {
+  justify-content: flex-end; /* Gambar ke kanan */
+}
+/* Profile Picture */
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid #1e3278;
+  object-fit: cover;
+}
+
+/* Info Section */
+.info {
+  margin-left: 50px;
+  flex-grow: 1;
+}
+
+.info h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #333333;
+  font-weight: bold;
+}
+
+.info p {
+  margin: 5px 0 0;
+  font-size: 0.9rem;
+  color: #666666;
+  font-weight: bold;
+}
+
+/* Dropdown */
+.dropdown select {
+  padding: 12px 12px;
+  border: 3px solid #1e3278;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #000000;
+  background-color: #ffffff;
+  cursor: pointer;
+  outline: none;
+  width: 100%; /* Atur lebar penuh relatif terhadap kontainernya */
+  max-width: 1000px; /* Batas maksimal lebar */
+  min-width: 400px; /* Batas minimal lebar */
+  box-sizing: border-box; /* Memastikan padding tidak menambah ukuran elemen */
+}
+
+.dropdown select:hover {
+  background-color: #f1f1f1;
+}
+
+
+
+/* Tabs Wrapper */
+.tabs-container {
+  padding-left: 100px; /* Menambahkan jarak dari sisi kiri browser */
+  padding-right: 50px; /* Menambahkan jarak di sisi kanan */
+  margin: 0 auto; /* Membuat container berada di tengah */
+  
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  
+}
+
+/* Tab Button */
+.tab {
+  background-color: #e8eaf6;
+  padding: 10px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: #000000;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.tab:hover {
+  transform: scale(1.05); /* Efek zoom ringan saat hover */
+}
+
+/* Active Tab */
+.tab.active {
+  background-color: #1e3278;
+  color: white;
+}
+
+/* Tab Content */
+.tab-content {
+  padding: 20px;
+  margin-top: 20px;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  opacity: 0;
+  transform: scale(0.95); /* Sedikit mengecil sebelum muncul */
+  transition: opacity 0.8s ease, transform 0.8s ease; /* Efek transisi untuk opacity dan transform */
+}
+
+.tab-content.show {
+  display: block;
+  opacity: 1;
+  transform: scale(1); /* Kembali ke ukuran normal */
+  visibility: visible;
+}
+
+.tab-content.hide {
+  opacity: 0;
+  transform: translateY(10px);  /* Mengecil kembali saat disembunyikan */
+  visibility: hidden;
+}
+
+/* Keyframes for New Animation */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8); /* Mulai lebih kecil */
+  }
+  to {
+    opacity: 1;
+    transform: scale(1); /* Ukuran normal */
+  }
+}
+
+.tab-content.show {
+  animation: fadeInScale 0.8s ease-out; /* Menggunakan animasi fade-in dan scale */
+}
+
+/* General styles personal data*/
+.personal-data-container {
+  width: 1372px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #1e3278;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Personal Data Styling */
+
+.personal-data {
+  width: 400px; /* Atur lebar sesuai kebutuhan */
+  margin-bottom: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.label {
+  font-weight: bold;
+  color: #000;
+  min-width: 150px; /* Memberikan lebar tetap untuk label agar titik dua sejajar */
+}
+
+.value {
+  color: #555;
+  flex: 1;
+}
+
+
+/* Buttons Styling */
+.buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: 2px solid #1e3278;
+  border-radius: 20px;
+  background-color: #ffffff;
+  color:  linear-gradient(
+    to right,
+    rgba(30, 50, 120, 1),
+    rgba(56, 93, 222, 1)
+  );;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #f1f1f1;
+}
+
+.contact-family-container{
+  width: 1372px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+}
+
+
+.contact-item {
+  margin-top: 10px;
+}
+
+.contact-item strong {
+  font-size: 18px;
+}
+
+.relation {
+  font-size: 16px;
+  color: #777;
+}
+
+.contact-info {
+  margin-top: 8px;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.icon {
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+.contact-value {
+  color: #333;
+  font-size: 14px;
+}
+
+.job-experience-container{
+  width: 1372px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+}
+
+.job-text {
+  font-size: 25px; /* Ukuran font default (sama dengan font parent) */
+  font-weight: bold; /* Membuat teks menjadi tebal */
+  flex: 1; /* Memberikan fleksibilitas agar elemen ini mengambil sisa ruang */
+  text-align: left; /* Menyelaraskan teks ke kiri */
+}
+.job-list {
+  list-style: none; /* Menghapus bullet/penanda bawaan pada daftar */
+  margin: 0; /* Menghapus margin bawaan daftar */
+  padding: 0; /* Menghapus padding bawaan daftar */
+  display: flex; /* Menggunakan Flexbox untuk tata letak */
+  flex-direction: column; /* Elemen ditata secara vertikal */
+  gap: 15px; /* Jarak antar elemen daftar */
+}
+
+.empty-section {
+  text-align: flex-start; /* Teks berada di tengah */
+  margin-top: 20px;   /* Memberikan jarak atas */
+}
+
+.empty-section p {
+  font-style: italic;  /* Membuat font miring */
+  color: #777;         /* Warna abu-abu untuk teks */
+  font-size: 26px;     /* Ukuran font */
+}
+
+/* Footer khusus untuk tampilan halaman */
+.custom-footer {
+  width: 1512px; /* Lebar penuh footer */
+  height: 70px; /* Tinggi footer */
+  background: linear-gradient(
+    to right,
+    #556080,
+    #2f3e4d
+  ); /* Gradien warna latar belakang */
+  color: white; /* Warna teks */
+  display: flex; /* Menggunakan Flexbox untuk tata letak */
+  justify-content: center; /* Konten berada di tengah secara horizontal */
+  align-items: center; /* Konten berada di tengah secara vertikal */
+  text-align: center; /* Teks rata tengah */
+  padding: 15px 0; /* Padding vertikal */
+}/* Responsif untuk layar kecil (tablet & ponsel) */
+@media (max-width: 1024px) {
+  .manager-column {
+      flex: 1 1 calc(33.33% - 15px); /* 3 kolom per baris */
+  }
+}
+
+@media (max-width: 768px) {
+  .manager-column {
+      flex: 1 1 calc(50% - 15px); /* 2 kolom per baris */
+  }
+}
+
+@media (max-width: 480px) {
+  .manager-column {
+      flex: 1 1 100%; /* 1 kolom per baris */
+  }
+}

@@ -1,0 +1,547 @@
+/* Body Styling */
+body {
+  margin: 0; /* Menghapus margin default browser */
+  font-family: Arial, sans-serif; /* Font utama halaman */
+  background-color: #f0f0f0; /* Warna latar belakang halaman */
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex; /* Flexbox untuk layout elemen */
+  justify-content: space-between; /* Memisahkan elemen ke kiri dan kanan */
+  align-items: center; /* Rata tengah secara vertikal */
+  background: linear-gradient(
+    to right,
+    #6a7f9b,
+    #242b35
+  ); /* Gradien warna navbar */
+  padding: 10px 30px; /* Spasi dalam navbar */
+  color: white; /* Warna teks */
+  height: 70px; /* Tinggi navbar */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Bayangan bawah untuk depth */
+}
+
+.user-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Jarak antara ikon dan teks */
+}
+
+.user-link:hover {
+  color: #1e3278; /* Ubah warna saat hover */
+}
+
+/* Navbar Inner Containers */
+.navbar-left,
+.navbar-center,
+.navbar-right {
+  display: flex; /* Flexbox untuk layout elemen */
+  align-items: center; /* Rata tengah secara vertikal */
+}
+
+/* Navbar Left */
+.navbar-left i {
+  font-size: 20px; /* Ukuran ikon */
+  margin-right: 10px; /* Jarak ikon menu dengan elemen berikutnya */
+}
+#menu-icon {
+  font-size: 28px; /* Ukuran ikon */
+  color: #fff; /* Warna ikon */
+  cursor: pointer; /* Menampilkan pointer saat hover */
+  transition: transform 0.3s ease, color 0.3s ease; /* Animasi saat hover */
+}
+
+#menu-icon:hover {
+  color: #4db8ff; /* Warna saat hover */
+  transform: rotate(90deg); /* Efek rotasi saat hover */
+}
+
+/* Logo Styling */
+.navbar .logo img {
+  height: 70px; /* Tinggi logo */
+  margin-right: 10px; /* Jarak antara logo dan elemen berikutnya */
+  transition: transform 0.3s ease; /* Animasi saat hover */
+}
+
+.navbar .logo img:hover {
+  transform: scale(1.1); /* Efek zoom saat hover */
+}
+
+/* Navbar Center */
+.navbar-center {
+  display: flex; /* Flexbox untuk layout */
+  align-items: center; /* Vertikal rata tengah */
+  justify-content: flex-end; /* Elemen mengalir ke kanan */
+  flex-grow: 1; /* Memperluas elemen untuk berada di tengah */
+  border-left: 1px solid rgba(255, 255, 255, 0.8); /* Garis pemisah dengan elemen sebelumnya */
+  padding-left: 20px; /* Spasi antara garis dan elemen */
+  text-align: center; /* Rata tengah teks */
+  margin-right: auto; /* Mengutamakan posisi tengah */
+}
+
+.navbar-center i {
+  font-size: 30px; /* Ukuran ikon lonceng */
+  margin-left: 10px; /* Jarak ikon dengan teks waktu */
+}
+
+
+/* Navbar Right */
+.navbar-right {
+  display: flex; /* Flexbox untuk layout */
+  align-items: center; /* Vertikal rata tengah */
+  justify-content: center; /* Rata tengah horizontal */
+  font-size: 14px; /* Ukuran teks */
+  font-weight: bold; /* Teks tebal */
+  padding: 10px 20px; /* Spasi dalam elemen */
+  min-width: 300px; /* Lebar minimum elemen */
+  height: 60px; /* Tinggi elemen */
+  border-radius: 5px; /* Sudut elemen membulat */
+}
+/* Time Container */
+#time-container {
+  display: flex; /* Flexbox untuk pengaturan waktu dan tanggal */
+  flex-direction: column; /* Elemen waktu dan tanggal disusun vertikal */
+  align-items: flex-start; /* Waktu dan tanggal rata kiri */
+  justify-content: center; /* Vertikal rata tengah */
+  color: white; /* Warna teks */
+  margin-left: 20px; /* Jarak dari elemen sebelumnya */
+}
+
+#time {
+  font-size: 20px; /* Ukuran teks waktu */
+  font-weight: bold; /* Menonjolkan waktu */
+  margin-bottom: 2px; /* Spasi kecil antara waktu dan tanggal */
+}
+
+#date {
+  font-size: 14px; /* Ukuran teks tanggal */
+  opacity: 0.8; /* Teks lebih redup untuk tanggal */
+}
+
+.navbar-right i {
+  font-size: 25px; /* Ukuran ikon user */
+  margin-right: 8px; /* Jarak ikon dengan nama */
+}
+
+/* Home Container Styling */
+.home-container {
+  max-width: 1372px; /* Lebar maksimum elemen */
+  height: 700px; /* Tinggi elemen */
+  margin: 50px auto; /* Margin vertikal 50px, horizontal auto untuk centering */
+  padding: 20px; /* Spasi dalam elemen */
+  background-color: white; /* Warna latar putih */
+  border-radius: 30px; /* Sudut membulat */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+  position: relative; /* Untuk memposisikan elemen anak seperti slider */
+}
+
+/* Highlight Text */
+.highlight-text {
+  font-size: 36px; /* Ukuran teks besar */
+  font-weight: bold; /* Teks tebal */
+  color: #0056b3; /* Warna teks biru */
+  text-align: relative; /* Posisi teks */
+}
+
+/* Slider Styling */
+.slider {
+  position: relative; /* Untuk memposisikan elemen seperti indikator */
+  width: 95%; /* Lebar slider */
+  margin: 20px auto; /* Margin atas dan bawah 20px, centering horizontal */
+  overflow: hidden; /* Menyembunyikan elemen di luar slider */
+  border-radius: 10px; /* Sudut membulat */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan untuk efek depth */
+}
+
+.slides {
+  display: flex; /* Flexbox untuk menampilkan slide */
+  transition: transform 0.5s ease-in-out; /* Animasi transisi slide */
+  width: 100%; /* Lebar penuh */
+}
+
+.slide {
+  width: 100%; /* Lebar setiap slide */
+  flex-shrink: 0; /* Mencegah elemen mengecil */
+}
+
+.slide img {
+  width: 100%; /* Gambar memenuhi slide */
+  height: auto; /* Rasio gambar tetap */
+  display: block; /* Menghapus margin bawah bawaan gambar */
+}
+
+/* Slider Indicators */
+.slider-indicators {
+  position: absolute; /* Untuk memposisikan di atas slider */
+  bottom: 20px; /* Jarak dari bawah */
+  left: 50%; /* Posisi di tengah secara horizontal */
+  transform: translateX(-50%); /* Menyesuaikan posisi tengah */
+  display: flex; /* Flexbox untuk tata letak indikator */
+  gap: 8px; /* Jarak antar indikator */
+}
+
+.slider-indicators .indicator {
+  width: 12px; /* Ukuran lebar indikator */
+  height: 12px; /* Tinggi indikator */
+  background-color: rgba(0, 0, 0, 0.5); /* Warna default indikator */
+  border-radius: 50%; /* Bentuk lingkaran */
+  cursor: pointer; /* Pointer saat hover */
+  transition: background-color 0.3s ease; /* Animasi saat aktif */
+}
+
+.slider-indicators .indicator.active {
+  background-color: #1e3278; /* Warna indikator aktif */
+}
+
+/* Navigation Buttons */
+.navi {
+  position: absolute; /* Posisi tombol navigasi di atas slider */
+  bottom: 20px; /* Jarak dari bawah */
+  right: 20px; /* Jarak dari kanan */
+  display: flex; /* Flexbox untuk tombol */
+  gap: 15px; /* Jarak antar tombol */
+}
+
+.navi button {
+  width: 50px; /* Lebar tombol */
+  height: 50px; /* Tinggi tombol */
+  border: none; /* Menghapus border default */
+  border-radius: 50%; /* Membulatkan tombol */
+  background-color: white; /* Warna latar tombol */
+  color: #1e3278; /* Warna ikon */
+  font-size: 18px; /* Ukuran ikon */
+  display: flex; /* Flexbox untuk posisi ikon */
+  justify-content: center; /* Horizontal rata tengah */
+  align-items: center; /* Vertikal rata tengah */
+  cursor: pointer; /* Pointer saat hover */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Efek hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan tombol */
+}
+
+.navi button:hover {
+  background-color: #1e3278; /* Warna latar saat hover */
+  color: white; /* Warna ikon saat hover */
+  transform: scale(1.1); /* Tombol membesar sedikit saat hover */
+}
+
+/* News Container */
+.news-container {
+  max-width: 1350px; /* Maksimal lebar kontainer */
+  height: auto; /* Tinggi otomatis mengikuti isi kontainer */
+  margin: 50px auto; /* Menambahkan jarak atas dan bawah, serta menjadikan kontainer center */
+  padding: 30px; /* Menambahkan padding dalam kontainer */
+  background-color: white; /* Warna latar belakang kontainer */
+  border-radius: 20px; /* Membulatkan sudut kontainer */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Memberikan bayangan halus pada kontainer */
+  display: flex; /* Menggunakan flexbox untuk layout */
+  flex-direction: column; /* Menata elemen dalam kolom */
+  align-items: flex-start; /* Mengatur posisi konten agar di kiri */
+  gap: 20px; /* Menambahkan jarak antara konten dalam kontainer */
+}
+
+/* Mengatur header berita */
+.news-header {
+  display: flex; /* Menata elemen secara horizontal */
+  align-items: center; /* Menyelaraskan elemen secara vertikal */
+  justify-content: flex-start; /* Menempatkan elemen di sisi kiri */
+  width: 100%; /* Lebar penuh */
+  margin-bottom: 10px; /* Menambahkan jarak bawah */
+  gap: 10px; /* mengatur jarak antara News dan Logo*/
+}
+/* Mengatur teks 'News' */
+.news-text {
+  font-size: 28px; /* Ukuran font */
+  font-weight: bold; /* Tebal teks */
+  color: #002f67; /* Warna teks */
+  margin: 0; /* Menghilangkan margin default */
+}
+
+/* Mengatur ukuran dan jarak logo */
+.logo1 img {
+  width: 30px; /* Ukuran lebar logo */
+  height: auto; /* Menjaga rasio aspek gambar logo */
+  object-fit: contain; /* Menghindari distorsi gambar */
+  display: block; /* Menghilangkan spasi bawah pada gambar */
+}
+
+/* Layout for Image and Text */
+.image-text-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Image Container */
+.image-container {
+  flex: 0 0 40%; /* 40% width for the image */
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* Menyesuaikan ukuran gambar */
+.image-container img {
+  width: 100%; /* Gambar mengisi lebar kontainer */
+  height: auto; /* Menjaga proporsi gambar */
+  object-fit: cover; /* Menutupi area gambar tanpa distorsi */
+  display: block; /* Menghilangkan spasi bawah pada gambar */
+  border-radius: 10px; /* Membulatkan sudut gambar */
+}
+
+/* Menata konten berita (judul dan deskripsi) */
+.news-content {
+  width: 50%; /*Mengatur ukuran layout*/
+  display: flex; /* Menggunakan flexbox untuk menata teks */
+  flex-direction: column; /* Menata elemen secara vertikal */
+  justify-content: flex-start; /* Menyelaraskan elemen ke atas */
+  text-align: left; /* Menyelaraskan teks ke kiri */
+}
+
+/* Menata judul berita */
+.news-title {
+  font-size: 22px; /* Ukuran font judul */
+  font-weight: bold; /* Tebal teks judul */
+  color: #002f67; /* Warna teks judul */
+  margin-bottom: 10px; /* Menambahkan jarak bawah */
+  text-decoration: underline;
+}
+
+.news-description {
+  font-size: 16px; /* Ukuran font deskripsi */
+  color: #333; /* Warna teks deskripsi */
+  line-height: 1.6; /* Menambahkan jarak antar baris */
+}
+
+.more-link {
+  color: #002f67; /* Warna teks tautan */
+  text-decoration: none; /* Menghilangkan garis bawah */
+  font-weight: bold; /* Membuat teks tebal */
+}
+
+.more-link:hover {
+  text-decoration: underline; /* Menambahkan garis bawah ketika hover */
+}
+
+/* HR Policy Section */
+.HR-policy {
+  max-width: 1372px; /* Lebar maksimum elemen untuk memastikan layout responsif */
+  height: 700px; /* Tinggi tetap untuk elemen */
+  margin: 50px auto; /* Margin atas dan bawah 50px, horizontal auto untuk centering */
+  padding: 20px; /* Ruang di dalam elemen */
+  background-color: white; /* Warna latar belakang putih */
+  border-radius: 30px; /* Membuat sudut elemen melengkung */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan untuk efek depth */
+}
+
+/* HR Policy Header */
+.HR-policy .news-header {
+  display: flex; /* Menggunakan Flexbox untuk tata letak header */
+  align-items: center; /* Elemen di dalam header rata tengah secara vertikal */
+}
+
+/* Teks utama untuk header HR Policy */
+.news-text {
+  font-size: 36px; /* Ukuran font besar untuk judul */
+  font-weight: bold; /* Membuat teks tebal */
+  color: #0056b3; /* Warna biru untuk teks */
+  margin: 0; /* Menghapus margin bawaan pada elemen */
+}
+
+/* Ikon untuk HR Policy */
+.logo-kertas {
+  font-size: 36px; /* Ukuran ikon besar agar seimbang dengan teks */
+  margin-left: 10px; /* Memberikan jarak antara ikon dan teks */
+  color: #0056b3; /* Warna ikon sama dengan warna teks untuk konsistensi */
+}
+
+/* Container untuk kebijakan */
+.policy-container {
+  max-width: 1360px; /* Lebar maksimum elemen untuk layout responsif */
+  margin: 40px auto; /* Memberikan margin vertikal 40px, horizontal auto untuk centering */
+  padding: 20px; /* Ruang di dalam elemen */
+  background-color: white; /* Warna latar belakang putih */
+  border-radius: 12px; /* Membuat sudut elemen melengkung */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan untuk efek depth */
+  display: flex; /* Menggunakan Flexbox untuk tata letak */
+  flex-direction: column; /* Elemen di dalam container ditata secara vertikal */
+  gap: 15px; /* Memberikan jarak antar elemen */
+  font-family: Arial, sans-serif; /* Font standar untuk teks */
+}
+
+/* Mengatur kontainer header kebijakan */
+.policy-header {
+  display: flex; /* Membuat elemen dalam baris horizontal */
+  align-items: center; /* Menyelaraskan elemen secara vertikal */
+  gap: 10px; /* Menambahkan jarak antara teks dan ikon */
+}
+
+/* Mengatur judul kebijakan */
+.policy-title {
+  font-size: 24px; /* Ukuran font judul */
+  font-weight: bold; /* Teks tebal */
+  color: #002f67; /* Warna teks */
+  margin: 0; /* Menghilangkan margin default */
+}
+
+/* Mengatur ikon */
+.policy-header i {
+  font-size: 28px; /* Ukuran ikon */
+  color: #0c2846; /* Warna ikon */
+  vertical-align: middle; /* Menyelaraskan ikon dengan teks */
+  display: flex; /* Mengatur ikon agar berperilaku sebagai elemen flex */
+  justify-content: center; /* Memusatkan isi di tengah */
+  align-items: center; /* Memusatkan isi secara vertikal */
+}
+
+/* Efek hover pada ikon */
+.policy-header i:hover {
+  color: #002f67; /* Mengubah warna ikon saat hover */
+  transform: scale(1.1); /* Memberikan efek zoom */
+  transition: all 0.3s ease-in-out; /* Menambahkan animasi transisi */
+}
+
+/* Ikon untuk kebijakan */
+.policy-icon {
+  width: 20px; /* Lebar ikon */
+  height: 20px; /* Tinggi ikon */
+}
+
+/* Styling untuk daftar kebijakan */
+.policy-list {
+  list-style: none; /* Menghapus bullet/penanda bawaan pada daftar */
+  margin: 0; /* Menghapus margin bawaan daftar */
+  padding: 0; /* Menghapus padding bawaan daftar */
+  display: flex; /* Menggunakan Flexbox untuk tata letak */
+  flex-direction: column; /* Elemen ditata secara vertikal */
+  gap: 15px; /* Jarak antar elemen daftar */
+}
+
+/* Styling untuk setiap item dalam daftar kebijakan */
+.policy-item {
+  display: flex; /* Menggunakan Flexbox untuk tata letak */
+  justify-content: space-between; /* Elemen dalam item tersebar di antara dua sisi */
+  align-items: center; /* Elemen rata tengah secara vertikal */
+  font-size: 16px; /* Ukuran font */
+  color: #333; /* Warna teks */
+}
+
+/* Styling untuk teks kebijakan */
+.policy-text {
+  font-size: 100%; /* Ukuran font default (sama dengan font parent) */
+  font-weight: bold; /* Membuat teks menjadi tebal */
+  flex: 1; /* Memberikan fleksibilitas agar elemen ini mengambil sisa ruang */
+  text-align: left; /* Menyelaraskan teks ke kiri */
+}
+
+/* Styling untuk tanggal kebijakan */
+.policy-date {
+  font-size: 14px; /* Ukuran font lebih kecil dibandingkan teks utama */
+  color: #888; /* Warna teks abu-abu terang */
+  text-align: right; /* Menyelaraskan teks ke kanan */
+}
+
+/* Kontainer utama untuk To-Do List */
+.todo-container {
+  max-width: 1360px; /* Lebar maksimum kontainer */
+  margin: 40px auto; /* Margin atas dan bawah sebesar 40px, kontainer berada di tengah */
+  padding: 20px; /* Padding dalam kontainer */
+  background-color: white; /* Warna latar belakang kontainer */
+  border-radius: 12px; /* Membulatkan sudut kontainer */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Memberikan efek bayangan */
+  display: flex; /* Menggunakan Flexbox untuk tata letak */
+  flex-direction: column; /* Elemen ditata secara vertikal */
+  gap: 15px; /* Jarak antar elemen */
+  font-family: Arial, sans-serif; /* Font utama */
+}
+
+/* Styling untuk judul utama (h1) */
+h1 {
+  font-size: 1.5rem; /* Ukuran font judul */
+  margin: 0 0 20px; /* Margin bawah untuk memberi jarak dengan elemen berikutnya */
+  display: flex; /* Menggunakan Flexbox untuk tata letak */
+  justify-content: flex-start; /* Posisi teks dimulai dari kiri */
+  align-items: center; /* Teks dan ikon rata secara vertikal */
+  color: #1e3278; /* Warna teks */
+  gap: 10px; /* Jarak antara teks dan ikon */
+}
+
+/* Styling untuk ikon pada judul */
+.icon {
+  font-size: 1.2rem; /* Ukuran ikon */
+  cursor: pointer; /* Kursor berubah menjadi pointer saat di-hover */
+}
+
+/* Styling untuk setiap item To-Do */
+.todo-item {
+  border-radius: 10px; /* Membulatkan sudut kotak */
+  padding: 15px; /* Padding dalam item */
+  margin-bottom: 15px; /* Jarak bawah antar item */
+  color: white; /* Warna teks */
+}
+
+/* Warna dan styling untuk item To-Do yang pending */
+.pending {
+  background-color: rgba(250, 108, 108, 0.42); /* Warna latar belakang */
+  color: #721c24; /* Warna teks */
+}
+
+/* Warna dan styling untuk item To-Do yang selesai (completed) */
+.completed {
+  background-color: rgba(30, 50, 120, 0.41); /* Warna latar belakang */
+  color: #34495e; /* Warna teks */
+}
+
+/* Warna dan styling untuk item To-Do yang akan datang (upcoming) */
+.upcoming {
+  background-color: rgba(217, 217, 217, 0.57); /* Warna latar belakang */
+  color: #6c757d; /* Warna teks */
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 480px) {
+  .todo-container {
+    width: 90%; /* Mengurangi lebar kontainer agar sesuai layar kecil */
+  }
+
+  h1 {
+    font-size: 1.2rem; /* Mengurangi ukuran font judul */
+  }
+}
+
+/* Footer khusus untuk tampilan halaman */
+.custom-footer {
+  width: 1512px; /* Lebar penuh footer */
+  height: 70px; /* Tinggi footer */
+  background: linear-gradient(
+    to right,
+    #556080,
+    #2f3e4d
+  ); /* Gradien warna latar belakang */
+  color: white; /* Warna teks */
+  display: flex; /* Menggunakan Flexbox untuk tata letak */
+  justify-content: center; /* Konten berada di tengah secara horizontal */
+  align-items: center; /* Konten berada di tengah secara vertikal */
+  text-align: center; /* Teks rata tengah */
+  padding: 15px 0; /* Padding vertikal */
+}
+/* Responsif untuk layar kecil (tablet & ponsel) */
+@media (max-width: 1024px) {
+  .manager-column {
+      flex: 1 1 calc(33.33% - 15px); /* 3 kolom per baris */
+  }
+}
+
+@media (max-width: 768px) {
+  .manager-column {
+      flex: 1 1 calc(50% - 15px); /* 2 kolom per baris */
+  }
+}
+
+@media (max-width: 480px) {
+  .manager-column {
+      flex: 1 1 100%; /* 1 kolom per baris */
+  }
+}

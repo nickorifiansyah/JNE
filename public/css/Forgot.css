@@ -1,0 +1,113 @@
+body {
+  background-image: url("/img/Background-login.png"); /* Ganti sesuai lokasi gambar */
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.forgot-password-container {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
+  width: 100%;
+  max-width: 600px;
+  border: 2px solid rgb(249, 249, 249);
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: white; /* Warna teks putih */
+}
+
+.input-group .form-control {
+  background: rgba(255, 255, 255, 0.1); /* Transparan */
+  border: 2px solid rgb(225, 221, 221);
+  color: rgb(255, 255, 255); /* Warna teks putih */
+  border-radius: 50px;
+  padding: 15px 50px 15px 20px;
+  width: 100%; /* Tambahkan jarak untuk ikon */
+  box-sizing: border-box;
+}
+
+.input-group i {
+  position: absolute;
+  right: 20px;
+  color: aliceblue;
+  font-size: 25px;
+  cursor: auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.input-group .form-control::placeholder {
+  color: rgb(250, 250, 250); /* Placeholder putih transparan */
+}
+.subtitle {
+  color: white; /* Mengubah warna teks menjadi putih */
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 15px;
+  border-radius: 50px;
+  color: white;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn.send {
+  background-color: #1e3278;
+  border: 2px solid white;
+}
+
+.btn.send:hover {
+  background-color: #0987ee;
+}
+
+.btn.back {
+  background-color: transparent;
+  margin-top: 20px;
+}
+
+.btn.back:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+/* Responsif untuk layar kecil (tablet & ponsel) */
+@media (max-width: 1024px) {
+  .manager-column {
+      flex: 1 1 calc(33.33% - 15px); /* 3 kolom per baris */
+  }
+}
+
+@media (max-width: 768px) {
+  .manager-column {
+      flex: 1 1 calc(50% - 15px); /* 2 kolom per baris */
+  }
+}
+
+@media (max-width: 480px) {
+  .manager-column {
+      flex: 1 1 100%; /* 1 kolom per baris */
+  }
+}

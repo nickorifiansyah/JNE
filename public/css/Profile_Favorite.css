@@ -1,0 +1,217 @@
+/* General Body Styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #eae8f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Profile Container */
+.profile-container {
+  max-width: 1372px; /* Lebar maksimum elemen */
+  height: 720px; /* Tinggi elemen */
+  margin: 50px auto; /* Margin vertikal 50px, horizontal auto untuk centering */
+  padding: 20px;
+  width: 80%;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border: 3px solid #1e3278;
+  position: relative; /* Untuk memposisikan elemen anak seperti slider */
+}
+
+/* Header */
+.profile-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-header h2 {
+  font-size: 1.5rem;
+  color: #1e3278;
+  font-weight: bold;
+  border: 2px solid #1e3278;
+  display: inline-block;
+  padding: 5px 20px;
+  border-radius: 20px;
+}
+
+/* Sections */
+.section {
+  margin-bottom: 20px;
+}
+
+.section-title {
+  background-color: #1e3278;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin: 0;
+  text-align: center;
+}
+
+.user-info {
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #333;
+  text-align: center;
+  font-weight: bold;
+}
+.user-action {
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #333;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  background-color: #e8eaf6;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: #1e3278;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.tab.active {
+  background-color: #1e3278;
+  color: white;
+}
+
+.tab-content {
+  padding: 20px;
+  margin-top: 20px;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; /* Efek transisi untuk opacity */
+}
+
+.tab-content.show {
+  display: block;
+  opacity: 1;
+}
+
+.tab-content.hide {
+  opacity: 0;
+  display: none;
+}
+
+/* User Index Section */
+.user-index {
+  background-color: #f8f9fa;
+  height: 200px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn.cancel {
+  background-color: rgba(238, 106, 111, 1);
+  color: white;
+}
+
+.btn.cancel:hover {
+  background-color: #f5c6cb;
+}
+
+.btn.confirm {
+  background-color: rgba(71, 92, 167, 1);
+  color: white;
+}
+
+.btn.confirm:hover {
+  background-color: #34495e;
+}
+
+.btn.back-home {
+  background-color: #2196f3; /* Warna untuk tombol Home */
+  color: white;
+  text-decoration: none; /* Supaya tombol terlihat seperti lainnya */
+}
+
+.btn.back-home:hover {
+  background-color: #1976d2; /* Warna saat hover */
+}
+
+/* Notifikasi Styling */
+.notification {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #28a745;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+/* Efek animasi */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Responsif untuk layar kecil (tablet & ponsel) */
+@media (max-width: 1024px) {
+  .manager-column {
+      flex: 1 1 calc(33.33% - 15px); /* 3 kolom per baris */
+  }
+}
+
+@media (max-width: 768px) {
+  .manager-column {
+      flex: 1 1 calc(50% - 15px); /* 2 kolom per baris */
+  }
+}
+
+@media (max-width: 480px) {
+  .manager-column {
+      flex: 1 1 100%; /* 1 kolom per baris */
+  }
+}

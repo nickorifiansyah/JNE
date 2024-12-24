@@ -1,0 +1,675 @@
+/* Body Styling */
+body {
+  margin: 0; /* Menghapus margin default browser */
+  font-family: Arial, sans-serif; /* Font utama halaman */
+  background-color: #f0f0f0; /* Warna latar belakang halaman */
+  transition: margin-left 0.3s ease; /* Transisi agar efek lebih halus */
+}
+
+/* Navbar Styling */
+/* Navbar Fixed dengan Tampilan Semula */
+.navbar {
+  position: fixed; /* Navbar tetap di posisi atas */
+  top: 0; /* Menempel di bagian atas */
+  left: 0; /* Mulai dari ujung kiri */
+  width: 100%; /* Lebar penuh */
+  z-index: 1000; /* Pastikan navbar di atas elemen lain */
+  display: flex; /* Tetap menggunakan flexbox */
+  justify-content: space-between; /* Konten kiri, tengah, dan kanan */
+  align-items: center; /* Rata tengah vertikal */
+  background: linear-gradient(
+    to right,
+    #6a7f9b,
+    #242b35
+  ); /* Gradien warna seperti sebelumnya */
+  padding: 10px 30px; /* Padding seperti semula */
+  color: white; /* Warna teks */
+  height: 70px; /* Tinggi navbar seperti semula */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Efek bayangan */
+}
+
+.user-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Jarak antara ikon dan teks */
+}
+
+.user-link:hover {
+  color: #1e3278; /* Ubah warna saat hover */
+}
+
+/* Navbar Inner Containers */
+.navbar-left,
+.navbar-center,
+.navbar-right {
+  display: flex; /* Flexbox untuk layout elemen */
+  align-items: center; /* Rata tengah secara vertikal */
+  z-index: 9999;
+}
+
+/* Navbar Left */
+.navbar-left i {
+  font-size: 20px; /* Ukuran ikon */
+  margin-right: 10px; /* Jarak ikon menu dengan elemen berikutnya */
+}
+#menu-icon {
+  font-size: 28px; /* Ukuran font tetap */
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.8s ease, color 0.8s ease, border 0.8s ease,
+    background 0.8s ease; /* Transisi untuk rotasi, warna, border, dan background */
+  position: relative;
+  padding: 5px 15px; /* Padding untuk ruang di sekitar ikon */
+  border-radius: 10px; /* Membuat border lebih halus */
+}
+
+/* Mengubah warna saat hover */
+#menu-icon:hover {
+  color: #ffffff; /* Warna saat hover */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Efek latar belakang saat hover */
+}
+
+/* Ketika menjadi X, tambahkan border dan latar belakang */
+#menu-icon.fa-times {
+  transform: rotate(180deg); /* Rotasi 180 derajat (jadi X) */
+  border: 3px solid #ffff; /* Border sekitar ikon */
+  background-color: rgba(
+    77,
+    184,
+    255,
+    0.1
+  ); /* Warna latar belakang saat menjadi X */
+  transition: transform 1s ease, background-color 1s ease; /* Transisi untuk rotasi dan border */
+}
+
+/* Navigasi Menu */
+.daftar {
+  display: flex; /* Sembunyikan menu secara default */
+  position: absolute;
+  top: 0; /* Mulai dari atas */
+  left: 0;
+  width: 99%; /* Lebar penuh */
+  background: linear-gradient(
+    to right,
+    #6a7f9b,
+    #242b35
+  ); /* Gradien warna seperti sebelumnya */
+  padding: 50px 0px;
+  padding-left: 50px;
+  margin-top: 170px;
+  z-index: 9999;
+  /* Pastikan padding tidak melebihi lebar browser */
+  box-sizing: border-box;
+  /* Animasi awal */
+  opacity: 0;
+  transform: translateY(-20px); /* Mulai sedikit ke atas */
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  pointer-events: none; /* Mencegah interaksi saat menu tidak aktif */
+}
+
+/* Tambahkan class 'active' untuk menu saat terbuka */
+.daftar.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto; /* Aktifkan interaksi */
+}
+
+.daftar ul {
+  display: flex; /* Gunakan flexbox untuk dua kolom */
+  flex-wrap: wrap; /* Izinkan item berpindah ke aris berikutnya */
+  gap: 50px 70px; /* Jarak antara item secara vertikal dan horizontal */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.daftar li {
+  flex: 0 0 calc(50% - 100px); /* 50% lebar untuk 2 kolom, dikurangi gap */
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer; /* Ubah ke pointer agar interaktif */
+  z-index: 9999;
+  position: relative;
+  padding: 6px 0; /* Tambahkan ruang untuk efek underline */
+  transition: all 0.3s ease; /* Transisi halus untuk perubahan */
+}
+
+.daftar li:hover {
+  color: #72c4fb; /* Warna teks saat hover */
+  transform: scale(1.05); /* Efek sedikit membesar */
+  z-index: 9999;
+  text-shadow: 0 0 8px rgba(77, 184, 255, 0); /* Glow di sekitar teks */
+}
+
+/* Efek underline animasi */
+.daftar li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  z-index: 9999;
+  left: 0;
+  width: 70%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    #72c4fb,
+    #1f8eff
+  ); /* Gradien warna untuk underline */
+  transform: scaleX(0); /* Garis awalnya tidak terlihat */
+  transform-origin: bottom right;
+  transition: transform 0.8s ease; /* Transisi animasi underline */
+}
+
+.daftar li:hover::after {
+  transform: scaleX(1); /* Tampilkan garis underline saat hover */
+  transform-origin: bottom left;
+  z-index: 9999;
+}
+
+/* Logo Styling */
+.navbar .logo img {
+  height: 70px; /* Tinggi logo */
+  margin-right: 10px; /* Jarak antara logo dan elemen berikutnya */
+  transition: transform 0.3s ease; /* Animasi saat hover */
+}
+
+.navbar .logo img:hover {
+  transform: scale(1.1); /* Efek zoom saat hover */
+}
+
+/* Styling Navigation */
+.navigation {
+  position: fixed;
+  top: 90px; /* Sesuaikan dengan navbar */
+  left: 0; /* Navigation tersembunyi di kiri */
+  width: 200px;
+  max-height: 100vh;
+  height: calc(100% - 90px);
+  background: linear-gradient(180deg, #6a7f9b 21.87%, #242b35 88.13%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Bayangan lebih halus */
+  transition: left 0.4s ease, box-shadow 0.4s ease, width 0.4s ease; /* Transisi yang lebih smooth */
+}
+
+/* Styling untuk h2 Navigation */
+.nav-container h3 {
+  font-size: 10px; /* Ukuran font */
+  color: #003366; /* Warna teks */
+  margin-bottom: 10px; /* Jarak dengan daftar ul */
+  text-align: start; /* Teks ditengahkan */
+  font-weight: bold; /* Membuat teks tebal */
+  text-transform: uppercase; /* Mengubah teks menjadi huruf besar */
+}
+
+.nav-container {
+  width: 85%; /* Lebar container lebih kecil (80% dari navigation) */
+  height: auto; /* Tinggi container lebih kecil (90% dari navigation) */
+  border: 2px solid #ddd; /* Border box */
+  box-sizing: border-box; /* Border termasuk ukuran */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Menempatkan user info di bawah */
+  background-color: #f9f9f9; /* Warna latar container */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Bayangan halus */
+  border-radius: 10px; /* Membuat sudut container lebih halus */
+  padding: 10px;
+  margin-top: 120px;
+}
+
+.nav-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+ul li a {
+  text-decoration: none; /* Menghilangkan garis bawah */
+  color: inherit; /* Warna mengikuti elemen induk */
+  display: flex; /* Menjadikan elemen <a> mengikuti tata letak flexbox */
+  align-items: center; /* Menyamakan posisi ikon dan teks vertikal */
+}
+
+ul li a:hover {
+  color: #4db8ff; /* Tambahkan warna hover yang menarik */
+  transform: scale(1.05); /* Efek zoom kecil saat hover */
+  transition: all 0.3s ease-in-out; /* Transisi yang halus */
+}
+
+.nav-container li {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  color: #003366;
+  font-size: 10px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out; /* Animasi lebih halus */
+  border-radius: 10px;
+  position: relative; /* Menjaga posisi elemen */
+  overflow: hidden; /* Menghindari elemen keluar */
+  margin-bottom: 5px;
+}
+
+.nav-container li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%; /* Mulai dari luar elemen */
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #5495d6, #003366); /* Gradien warna */
+  transition: all 0.4s ease-in-out; /* Animasi gradient */
+  z-index: -1; /* Di bawah teks */
+}
+
+.nav-container li:hover::before {
+  left: 0; /* Geser ke posisi penuh */
+}
+
+.nav-container li:hover {
+  color: white; /* Mengubah warna teks */
+  transform: translateY(-3px); /* Efek pergeseran ke atas */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Shadow halus */
+  border-radius: 10px;
+}
+
+.nav-container li i {
+  margin-right: 10px;
+  color: #003366;
+}
+
+.nav-container li.active {
+  background: linear-gradient(
+    to right,
+    #5495d6,
+    #003366
+  ); /* Gradien warna aktif */
+  color: white; /* Warna teks saat aktif */
+  transform: translateY(-3px); /* Efek pergeseran ke atas */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Bayangan tambahan */
+  border-radius: 10px; /* Sudut bulat */
+}
+
+/* Container Khusus untuk User Info */
+.user-info-container {
+  width: 75%; /* Lebar sesuai navigation */
+  padding: 10px; /* Padding untuk konten */
+  background-color: #f5f5f5; /* Warna background */
+  border-top: 1px solid #ddd; /* Garis pemisah */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Bayangan */
+  margin: 0 auto ; /* Pusatkan container */
+  border-radius: 10px;
+  position: relative; /* Relatif untuk posisi ikon */
+}
+
+.user-info p {
+  font-size: 15px;
+  color: #003366;
+  margin: 0; /* Hilangkan margin default */
+}
+
+.user-info strong {
+  display: block; /* Tampilkan di bawah teks "Logged in as" */
+  color: black;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+/* Ikon Power-Off */
+.power-off-icon {
+  position: absolute; /* Posisi absolut terhadap container */
+  right: 50px; /* Jarak dari kanan */
+  top: 47%; /* Tengah vertikal */
+  transform: translateY(-90%); /* Koreksi agar pas di tengah */
+  font-size: 23px;
+  color: #003366;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.power-off-icon:hover {
+  color: #c9302c; /* Warna lebih gelap saat hover */
+}
+
+.footer{
+  padding: 15px;
+}
+
+/* Modal */
+.modal {
+  display: none; /* Modal tersembunyi secara default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Latar belakang semi-transparan */
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  opacity: 0; /* Awalnya tidak terlihat */
+  transition: opacity 0.3s ease-in-out; /* Transisi halus */
+}
+
+.modal.show {
+  display: flex;
+  opacity: 1; /* Menampilkan modal dengan transisi */
+}
+
+.modal-content {
+  background-color: #003366;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transform: translateY(-30px);
+  animation: slideIn 0.3s ease-in-out forwards;
+}
+
+/* Animasi slide-in modal */
+@keyframes slideIn {
+  0% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+button {
+  padding: 10px 30px;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #4b8bf7;
+  color: white;
+}
+
+button:focus {
+  outline: none;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Navbar Center */
+.navbar-center {
+  display: flex; /* Flexbox untuk layout */
+  align-items: center; /* Vertikal rata tengah */
+  justify-content: flex-end; /* Elemen mengalir ke kanan */
+  flex-grow: 1; /* Memperluas elemen untuk berada di tengah */
+  border-left: 1px solid rgba(255, 255, 255, 0.8); /* Garis pemisah dengan elemen sebelumnya */
+  padding-left: 20px; /* Spasi antara garis dan elemen */
+  text-align: center; /* Rata tengah teks */
+  margin-right: auto; /* Mengutamakan posisi tengah */
+}
+
+.navbar-center i {
+  font-size: 30px; /* Ukuran ikon lonceng */
+  margin-left: 10px; /* Jarak ikon dengan teks waktu */
+}
+
+/* Time Container */
+#time-container {
+  display: flex; /* Flexbox untuk pengaturan waktu dan tanggal */
+  flex-direction: column; /* Elemen waktu dan tanggal disusun vertikal */
+  align-items: flex-start; /* Waktu dan tanggal rata kiri */
+  justify-content: center; /* Vertikal rata tengah */
+  color: white; /* Warna teks */
+  margin-left: 20px; /* Jarak dari elemen sebelumnya */
+}
+
+#time {
+  font-size: 20px; /* Ukuran teks waktu */
+  font-weight: bold; /* Menonjolkan waktu */
+  margin-bottom: 2px; /* Spasi kecil antara waktu dan tanggal */
+}
+
+#date {
+  font-size: 14px; /* Ukuran teks tanggal */
+  opacity: 0.8; /* Teks lebih redup untuk tanggal */
+}
+
+/* Navbar Right */
+.navbar-right {
+  display: flex; /* Flexbox untuk layout */
+  align-items: center; /* Vertikal rata tengah */
+  justify-content: center; /* Rata tengah horizontal */
+  font-size: 14px; /* Ukuran teks */
+  font-weight: bold; /* Teks tebal */
+  padding: 10px 20px; /* Spasi dalam elemen */
+  min-width: 300px; /* Lebar minimum elemen */
+  height: 60px; /* Tinggi elemen */
+  border-radius: 5px; /* Sudut elemen membulat */
+}
+
+.navbar-right i {
+  font-size: 25px; /* Ukuran ikon user */
+  margin-right: 8px; /* Jarak ikon dengan nama */
+}
+
+h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: rgba(30, 50, 120, 1);
+}
+
+
+.display_user_grup {
+  width: 90%;
+  max-width: 1370px;
+  height: 500px;
+  margin: 10px auto;
+  border-radius: 20px;
+  background-color: white;
+  margin-top: 40px;
+  margin-bottom: 100px;
+}
+
+.header {
+  background-color: rgba(71, 92, 167, 1);
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 20px 20px 0px 0px;
+  height: 30px;
+  
+}
+
+.table-container {
+  max-height: 400px; /* Atur tinggi maksimum untuk scroll */
+  overflow-y: auto; /* Tambahkan scrollbar vertikal */
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  padding: 10px;
+}
+
+th,
+td {
+  text-align: center;
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  background-color: #f0f0f0;
+}
+
+th {
+  background-color: rgba(15, 142, 252, 0.42);
+  color: black;
+  font-size: 14px;
+  font-weight: 100px;
+  padding: 10px;
+  height: 50px;
+  position: sticky;
+  top: 0; /* Header tetap terlihat saat scroll */
+  z-index: 1;
+}
+
+tr.sub-header {
+  background-color: rgba(0, 123, 255, 0.1); /* Latar belakang lebih mencolok */
+  font-weight: bold;
+  font-size: 16px; /* Ukuran font lebih besar */
+  border-bottom: 2px solid rgba(0, 123, 255, 0.5); /* Garis bawah tebal */
+}
+
+.checkbox-container {
+  display: flex;
+  justify-content: center; /* Membuat checkbox di tengah secara horizontal */
+  align-items: center; /* Membuat checkbox di tengah secara vertikal */
+}
+
+.checkbox-container input[type="checkbox"] {
+  width: 20px; /* Perbesar checkbox */
+  height: 20px; /* Perbesar checkbox */
+  
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-top: 220px;
+  margin-left: 60px;
+
+}
+
+.tab {
+  background-color: #f1f1f1;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: black;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+.tab.active {
+  background-color: rgba(71, 92, 167, 1);
+  color: white;
+}
+
+.tab-content {
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; /* Efek transisi untuk opacity */
+}
+
+.tab-content.show {
+  display: block;
+  opacity: 1;
+}
+
+.tab-content.hide {
+  opacity: 0;
+  display: none;
+}
+
+.content {
+    width: 100%; /* Pastikan container memiliki lebar penuh */
+}
+
+/* Container tombol */
+.button_container {
+  display: flex;
+  align-items: center; /* Rata tengah secara vertikal */
+  width: 100%;
+  margin: 10px auto; /* Jarak atas dan bawah lebih kecil */
+  padding: 5px; /* Padding lebih kecil */
+  background-color: #fff; /* Warna latar belakang putih */
+  border-bottom: 1px solid #ccc; /* Garis bawah */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+  z-index: 1000;
+  position: fixed; /* Navbar tetap di posisi atas */
+  top: 70px; /* Menempel di bagian atas */
+  left: 0; /* Mulai dari ujung kiri */
+}
+
+/* Gambar di sisi kiri */
+.button_container .image-container {
+  display: flex;
+  align-items: center; /* Menjaga gambar rata tengah vertikal */
+}
+
+.button_container .image-container img {
+  height: 55px; /* Ukuran tinggi gambar lebih kecil */
+  margin-right: 45px; /* Jarak antara gambar dan tombol */
+}
+
+/* Tombol */
+.actions {
+  display: flex;
+  flex-wrap: wrap; /* Mendukung baris baru jika ruang terbatas */
+  max-width: 1372px;
+  width: 60%;
+  gap: 8px; /* Jarak antar tombol lebih kecil */
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 6px 8px; /* Padding lebih kecil */
+  background-color: #002f6c; /* Warna biru JNE */
+  color: #fff; /* Warna teks putih */
+  font-size: 12px; /* Ukuran font lebih kecil */
+  font-weight: bold;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+  background-color: #00509e; /* Warna hover */
+}
+
+.action-button i {
+  margin-right: 5px; /* Jarak ikon dengan teks lebih kecil */
+}
+/* Footer khusus untuk tampilan halaman */
+.custom-footer {
+  width: 100%; /* Lebar penuh footer */
+  height: 50px; /* Tinggi footer */
+  background: linear-gradient(
+    to right,
+    #556080,
+    #2f3e4d
+  ); /* Gradien warna latar belakang */
+  color: white; /* Warna teks */
+  display: flex; /* Menggunakan Flexbox untuk tata letak */
+  justify-content: center; /* Konten di tengah horizontal */
+  align-items: center; /* Konten di tengah vertikal */
+  text-align: center; /* Teks rata tengah */
+  padding: 15px 0; /* Padding vertikal */
+  bottom: 0; /* Menempel di bagian bawah */
+  
+}
